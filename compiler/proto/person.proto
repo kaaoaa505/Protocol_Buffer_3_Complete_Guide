@@ -1,9 +1,26 @@
 syntax = "proto3";
 
-// imports must be from the root of the project path
-import "proto/inc/eye_color.proto";
-import "proto/inc/date.proto";
-import "proto/inc/address.proto";
+enum EyeColor{
+    UNKNOWN = 0;
+    BLACK = 1;
+    BROWN = 2;
+    GREEN = 3;
+    BLUE = 4;
+}
+
+message Date{
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+}
+
+message Address{
+    string address_line_1 = 1;
+    string address_line_2 = 2;
+    string zip_code = 3;
+    string city = 4;
+    string country = 5;
+}
 
 message Person{
     int32 age = 1;
