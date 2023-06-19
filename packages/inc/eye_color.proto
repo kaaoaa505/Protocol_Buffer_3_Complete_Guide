@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+enum EyeColor{
+    UNKNOWN = 0;
+    BLACK = 1;
+    BROWN = 2;
+    GREEN = 3;
+    BLUE = 4;
+}
