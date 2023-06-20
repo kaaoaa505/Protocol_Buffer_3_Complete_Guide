@@ -27,11 +27,14 @@ public class Main {
             FileOutputStream outputStream = new FileOutputStream("sample_output.bin");
             message.writeTo(outputStream);
             outputStream.close();
+
+            byte[] targetBytes = message.toByteArray();
+            System.out.println(targetBytes);
+
+            SampleObj dataFromBinFile = SampleObj.parseFrom(targetBytes);
+            System.out.println(dataFromBinFile);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        byte[] targetBytes = message.toByteArray();
-        System.out.println(targetBytes);
     }
 }
