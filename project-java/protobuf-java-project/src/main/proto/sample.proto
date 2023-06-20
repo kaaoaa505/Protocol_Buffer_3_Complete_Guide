@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package dev.sample;
+
+message sample{
+  int32 id = 1;
+  string name = 2;
+  bool is_valid = 3;
+  repeated string str_list = 4;
+}
+
