@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package dev.sample;
+package dev.sample.local;
 
-message sample{
+message SampleObj{
   int32 id = 1;
   string name = 2;
   bool is_valid = 3;
