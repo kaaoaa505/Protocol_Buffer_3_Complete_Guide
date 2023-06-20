@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package dev.sample.local;
+package dev.local;
 
 message SampleObj{
   int32 id = 1;

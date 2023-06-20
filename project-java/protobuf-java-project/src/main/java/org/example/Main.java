@@ -1,6 +1,6 @@
 package org.example;
 
-import dev.sample.local.Sample.SampleObj;
+import dev.local.Sample.SampleObj;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
