@@ -1,10 +1,8 @@
 package org.example;
 
 import com.google.protobuf.InvalidProtocolBufferException;
-import dev.local.Dayofweek;
 import dev.local.Dayofweek.DayOfWeek;
 import dev.local.Dayofweek.TargetWeekObj;
-import dev.local.Sample;
 
 public class MainTargetWeek {
 
