@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package dev.local;
 
-option go_package = "./";
+option go_package = "./local";
 
 option java_package = "com.host.local.options";
 option java_multiple_files = true;

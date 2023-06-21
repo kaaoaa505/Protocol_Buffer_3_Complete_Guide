@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package dev.local;
 
-option go_package = "./";
+option go_package = "./local";
 
 message TargetWeekObj{
   int32 id = 1;
