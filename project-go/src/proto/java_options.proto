@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package dev.local;
+
+option go_package = "./";
+
+option java_package = "com.host.local.options";
+option java_multiple_files = true;
+
+message OptionsObj {
+  int32 id = 1;
+  bool is_valid = 2;
+  string  name = 3;
+  repeated string custom_list = 4;
+}
+
+message OptionsV2Obj {
+  string uuid = 1;
+  bool is_valid = 2;
+  string  name = 3;
+  repeated string custom_list_str = 4;
+  repeated int32 custom_list_int = 5;
+}

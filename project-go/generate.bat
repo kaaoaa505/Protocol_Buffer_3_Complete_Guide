@@ -1,0 +1,1 @@
+protoc.exe --go_out=build .\src\proto\*.proto
