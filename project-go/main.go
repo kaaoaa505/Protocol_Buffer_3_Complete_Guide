@@ -1,17 +1,25 @@
 package main
 
 import (
-	"fmt"
+	"io/ioutil"
+	"log"
+	"strings"
+
+	"google.golang.org/protobuf/proto"
 	"local.dev/m/v2/build/local"
 )
 
 func main() {
-	fmt.Println("Hello World!.")
+	println("Hello World!.")
 
-	call_sample_message()
+	message := call_sample_message()
+
+	println(message)
+
+	writeToFile("message.bin", message);
 }
 
-func call_sample_message() {
+func call_sample_message() *local.SampleObj{
 	sm := local.SampleObj{
 		Id:      0,
 		Name:    "",
@@ -23,8 +31,34 @@ func call_sample_message() {
 	sm.Id = 123
 	sm.Name = "Khaled Allam"
 
-	fmt.Println(sm.IsValid)
-	fmt.Println(sm.Id)
-	fmt.Println(sm.Name)
-	fmt.Println(sm.StrList)
+	println(sm.IsValid)
+	println(sm.Id)
+	println(sm.Name)
+	println(strings.Join(sm.StrList, ","))
+
+	return &sm
+}
+
+func writeToFile(fileName string, message proto.Message) error{
+	println(fileName)
+	output, messageError := proto.Marshal(message);
+
+	if(messageError != nil){
+		println(messageError)
+		log.Fatalln(messageError);
+		return messageError;
+	}
+
+	println(output)
+
+	ioWriteError := ioutil.WriteFile(fileName, output, 0644);
+	if(ioWriteError != nil){
+		println(ioWriteError)
+		log.Fatalln(ioWriteError);
+		return ioWriteError;
+	}
+
+	println("Write to file was successful, File Name: ", fileName)
+
+	return nil;
 }
