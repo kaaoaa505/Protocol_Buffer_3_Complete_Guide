@@ -13,7 +13,7 @@ import (
 )
 
 func main() {
-	println("Hello World!.")
+	println("\n\n\n################# Read And Write - START.")
 
 	messageToWrite := call_sample_message()
 	writeToFile("message.bin", messageToWrite)
@@ -42,6 +42,9 @@ func main() {
 	println("messageToRead messageToProto.Id: ", messageToProto.Id)
 	println("messageToRead messageToProto.Name: ", messageToProto.Name)
 	println("messageToRead messageToProto.IsValid: ", messageToProto.IsValid)
+
+
+	println("################# Read And Write - END.\n\n\n")
 }
 
 func call_sample_message() *local.SampleObj {
